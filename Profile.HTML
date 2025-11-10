@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aadya Pandey | My Creative Profile 💜</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+  * { box-sizing: border-box; font-family: "Poppins", sans-serif; }
+
+  body {
+    background: linear-gradient(135deg, #f3e8ff, #e0c3fc, #f9d1ff);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    margin: 0;
+    padding: 0;
+    color: #3a2d63;
+    overflow-x: hidden;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  h1, h2, h3 {
+    margin: 0;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.9);
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(120, 70, 255, 0.15);
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Sparkles */
+  .sparkle {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: sparkle 5s linear infinite;
+  }
+  @keyframes sparkle {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+  }
+
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 5px solid #b48ef7;
+    box-shadow: 0 0 20px rgba(180,142,247,0.4);
+    object-fit: cover;
+  }
+
+  input[type="file"] {
+    font-size: 13px;
+    color: #6a5b9a;
+    margin-top: 8px;
+  }
+
+  .intro {
+    flex: 1;
+  }
+
+  .intro h1 {
+    color: #8b5cf6;
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  .intro p {
+    margin: 6px 0;
+    font-size: 16px;
+  }
+
+  .youtube-highlight {
+    background: linear-gradient(90deg, #a26ef7, #d76cf7);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 16px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(171,90,255,0.4);
+    animation: pulse 2s infinite;
+  }
+  .youtube-highlight a {
+    color: white;
+    text-decoration: none;
+  }
+  @keyframes pulse {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  .section {
+    margin-top: 30px;
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(120, 70, 255, 0.08);
+    animation: fadeIn 1.2s ease both;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section h3 {
+    color: #8b5cf6;
+    margin-bottom: 8px;
+  }
+
+  .grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .comment-box {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f4e9ff;
+    border-radius: 16px;
+  }
+  .comment-box h3 { color: #8b5cf6; }
+  textarea {
+    width: 100%;
+    min-height: 70px;
+    border: 2px solid #c9a9ff;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 14px;
+    resize: none;
+  }
+  .emoji-btn {
+    cursor: pointer;
+    font-size: 20px;
+    margin: 3px;
+  }
+  .add-btn {
+    background: #8b5cf6;
+    border: none;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 10px;
+    margin-top: 8px;
+    cursor: pointer;
+  }
+  .comment {
+    background: white;
+    border-radius: 10px;
+    padding: 8px;
+    margin-top: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+
+  footer {
+    text-align: center;
+    font-size: 13px;
+    color: #6a5b9a;
+    margin-top: 30px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Sparkles background -->
+  <div class="sparkle" style="top:-10px; left:10%; width:6px; height:6px; animation-delay:1s;"></div>
+  <div class="sparkle" style="top:-10px; left:50%; width:8px; height:8px; animation-delay:2s;"></div>
+  <div class="sparkle" style="top:-10px; left:80%; width:5px; height:5px; animation-delay:3s;"></div>
+
+  <div class="profile-header">
+    <div>
+      <img id="avatar" class="profile-pic" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600" alt="Aadya Avatar">
+      <br>
+      <input type="file" id="imageUpload" accept="image/*">
+    </div>
+    <div class="intro">
+      <h1>💜 Aadya Pandey</h1>
+      <p>Age 9 | Student at Billabong High International School 📘</p>
+      <p>Born in Indore, living in Pune ✈️</p>
+
+      <div class="youtube-highlight">
+        🎥 <a href="https://www.youtube.com/channel/UCnNuVUPdmeatRnlR-Zwbl4g" target="_blank">
+        Visit my YouTube Channel — Dancingdoll #Aadu 💃</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section grid">
+    <div>
+      <h3>🌟 My Goals</h3>
+      <p>I want to be creative, knowledgeable, and achieve great things.  
+      My dream is to become a <b>paediatrician</b> 👩‍⚕️ so I can help children stay healthy and happy!</p>
+    </div>
+    <div>
+      <h3>🚀 My Inspiration</h3>
+      <p><b>Dr. APJ Abdul Kalam</b> — for his kindness, knowledge, and dreams for young minds 🌠</p>
+    </div>
+    <div>
+      <h3>📚 My Favourite Books</h3>
+      <p>Harry Potter and the Order of the Phoenix, The Little Prince 💫</p>
+    </div>
+  </div>
+
+  <div class="section grid">
+    <div>
+      <h3>🎨 My Hobbies</h3>
+      <p>Dancing 💃 | Reading 📖 | Sketching ✏️ | Playing Basketball 🏀</p>
+    </div>
+    <div>
+      <h3>🎂 My Birthday</h3>
+      <p>Born on <b>11th September 2016</b> — full of cake, fun, and smiles! 🎉🍰</p>
+    </div>
+    <div>
+      <h3>🌈 My Favourite Festival</h3>
+      <p><b>Holi</b> — I play with colors and water with my friends and family! 💦🌸</p>
+    </div>
+  </div>
+
+  <div class="section grid">
+    <div>
+      <h3>🌍 My Favourite Trip</h3>
+      <p>My trip to <b>Rajasthan</b> — jungle safari, temple visits, and a smooth elephant ride! 🐘⛺</p>
+    </div>
+    <div>
+      <h3>👧 My Sister</h3>
+      <p>My little sister <b>Ayra</b> is a great dancer, smart, and super creative! 🌸💃</p>
+    </div>
+    <div>
+      <h3>🚗 Family Adventures</h3>
+      <p>I love travelling in planes and cars with my family — every trip is a new story! ✈️🚗💜</p>
+    </div>
+  </div>
+
+  <div class="comment-box">
+    <h3>💬 Leave a Comment for Aadya</h3>
+    <div>
+      <span class="emoji-btn">😊</span>
+      <span class="emoji-btn">🌸</span>
+      <span class="emoji-btn">🎉</span>
+      <span class="emoji-btn">🏀</span>
+      <span class="emoji-btn">💜</span>
+      <span class="emoji-btn">🐘</span>
+    </div>
+    <textarea id="commentInput" placeholder="Write your message here..."></textarea><br>
+    <button class="add-btn" id="addComment">Add Comment</button>
+    <div id="commentList"></div>
+  </div>
+
+  <footer>✨ Made with love by <b>Aadya Pandey</b> | Dream big & shine bright 💜</footer>
+</div>
+
+<script>
+  const emojis = document.querySelectorAll('.emoji-btn');
+  const input = document.getElementById('commentInput');
+  const list = document.getElementById('commentList');
+  const addBtn = document.getElementById('addComment');
+
+  emojis.forEach(e => e.addEventListener('click', () => input.value += e.textContent));
+
+  addBtn.addEventListener('click', () => {
+    const text = input.value.trim();
+    if (text) {
+      const div = document.createElement('div');
+      div.className = 'comment';
+      div.textContent = text;
+      list.appendChild(div);
+      input.value = '';
+    } else {
+      alert('Please add a nice comment for Aadya! 💜');
+    }
+  });
+
+  // Upload photo
+  document.getElementById('imageUpload').addEventListener('change', e => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = ev => document.getElementById('avatar').src = ev.target.result;
+      reader.readAsDataURL(file);
+    }
+  });
+</script>
+
+</body>
+</html>
+
