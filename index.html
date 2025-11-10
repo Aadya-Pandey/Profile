@@ -36,7 +36,6 @@
     overflow: hidden;
   }
 
-  /* Sparkles */
   .sparkle {
     position: absolute;
     background: white;
@@ -155,7 +154,6 @@
 
 <div class="container">
 
-  <!-- Sparkles -->
   <div class="sparkle" style="top:-10px; left:10%; width:6px; height:6px; animation-delay:1s;"></div>
   <div class="sparkle" style="top:-10px; left:50%; width:8px; height:8px; animation-delay:2s;"></div>
   <div class="sparkle" style="top:-10px; left:80%; width:5px; height:5px; animation-delay:3s;"></div>
@@ -223,7 +221,6 @@
     </div>
   </div>
 
-  <!-- Comments Section -->
   <div class="comment-box">
     <h3>💬 Leave a Comment for Aadya</h3>
     <textarea id="commentInput" placeholder="Write your message..."></textarea><br>
@@ -235,49 +232,53 @@
   <footer>✨ Made with love by <b>Aadya Pandey</b> 💜</footer>
 </div>
 
-<!-- Firebase -->
+<!-- ✅ Firebase Realtime Database Code -->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
-  import { getFirestore, collection, addDoc, onSnapshot, serverTimestamp } 
-    from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+  import { getDatabase, ref, push, onValue } 
+    from "https://www.gstatic.com/firebasejs/12.5.0/firebase-database.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyAXiWeS0W7JMPZCU5w6mc_NVbvX7Qyn6ck",
     authDomain: "aadya-profile-comments.firebaseapp.com",
     projectId: "aadya-profile-comments",
+    databaseURL: "https://aadya-profile-comments-default-rtdb.firebaseio.com/",
     storageBucket: "aadya-profile-comments.firebasestorage.app",
     messagingSenderId: "176771895161",
     appId: "1:176771895161:web:dd2912e0680e9144b7e9a8"
   };
 
   const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
+  const db = getDatabase(app);
 
   const commentInput = document.getElementById("commentInput");
   const postBtn = document.getElementById("postComment");
   const commentList = document.getElementById("commentList");
 
-  // Post comment
+  // ✅ Post comment
   postBtn.onclick = async () => {
     let text = commentInput.value.trim();
     if (text.length === 0) return alert("Please write something 💜");
-    await addDoc(collection(db, "comments"), {
+
+    push(ref(db, "comments"), {
       text: text,
-      time: serverTimestamp()
+      time: Date.now()
     });
+
     commentInput.value = "";
   };
 
-  // Real-time listener
-  onSnapshot(collection(db, "comments"), snap => {
+  // ✅ Real-time display
+  onValue(ref(db, "comments"), snapshot => {
     commentList.innerHTML = "";
-    snap.forEach(doc => {
+    snapshot.forEach(child => {
       let div = document.createElement("div");
       div.className = "comment";
-      div.textContent = doc.data().text;
+      div.textContent = child.val().text;
       commentList.appendChild(div);
     });
   });
+
 </script>
 
 </body>
