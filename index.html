@@ -1,151 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aadya's Profile</title>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fafafa;
-      margin: 0;
-      padding: 20px;
-    }
-
-    .profile-container {
-      max-width: 500px;
-      margin: auto;
-      text-align: center;
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .profile-pic {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #ff99cc;
-    }
-
-    .comments-section {
-      margin-top: 30px;
-    }
-
-    .single-comment {
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      background: #fff;
-      margin-bottom: 10px;
-      text-align: left;
-    }
-
-    #commentInput {
-      width: 80%;
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-
-    #postBtn {
-      padding: 10px 15px;
-      border: none;
-      background: #ff66b2;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    #postBtn:hover {
-      background: #ff3385;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadya’s Awesome Profile ✨</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #ffe9f3, #c8e7ff);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        img.profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ff85c0;
+        }
+        img.logo {
+            width: 90px;
+            margin-top: 10px;
+        }
+        h1 {
+            color: #ff4b8e;
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+        h2 {
+            color: #4b4b4b;
+            margin-top: 15px;
+        }
+        .section {
+            text-align: left;
+            margin: 20px 0;
+        }
+        .highlight {
+            background: #ffe5f7;
+            padding: 10px;
+            border-radius: 12px;
+        }
+        .youtube {
+            background: #fff3cd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+        }
+        .comment-section {
+            background: #e6f4ff;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+        input, button {
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+            border: 1px solid #999;
+        }
+        button {
+            background: #ff4b8e;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="container">
 
-  <div class="profile-container">
-    <img src="aadya-profile.jpg" alt="Profile Picture" class="profile-pic">
+        <!-- Profile Image -->
+        <img src="aadya-profile.jpg" class="profile-pic" alt="Aadya Profile Picture">
 
-    <h2>Hello! I am Aadya 👋</h2>
-    <p>Welcome to my profile page!</p>
+        <!-- Logo -->
+        <img src="logo.png" class="logo" alt="Logo">
 
-    <div class="comments-section">
-      <h3>Leave a Comment ✨</h3>
+        <h1>Hello! I am Aadya 👋</h1>
 
-      <form id="commentForm">
-        <input id="commentInput" type="text" placeholder="Write something nice..." required>
-        <button id="postBtn" type="submit">Post</button>
-      </form>
+        <!-- YouTube Section at Top -->
+        <div class="youtube">
+            <h2>🎥 My YouTube Channel</h2>
+            <p><strong>Dancingdoll #Aadu</strong></p>
+            <a href="https://www.youtube.com/channel/UCnNuVUPdmeatRnlR-Zwbl4g" target="_blank">Click to visit my channel</a>
+        </div>
 
-      <h3 style="margin-top:20px;">Comments</h3>
-      <div id="commentsBox"></div>
+        <!-- About Section -->
+        <div class="section highlight">
+            <h2>💡 About Me</h2>
+            <p>I study at Billabong High International School.</p>
+            <p>I was born in Indore and I live in Pune.</p>
+            <p>I love sketching, traveling in planes and cars with my family.</p>
+            <p>I get inspired by Dr. APJ Abdul Kalam.</p>
+        </div>
+
+        <!-- Favorites -->
+        <div class="section">
+            <h2>⭐ My Favorites</h2>
+            <p><strong>Books:</strong> Harry Potter and the Order of the Phoenix, The Little Prince</p>
+            <p><strong>Subject:</strong> Maths (helps in calculations & memory)</p>
+            <p><strong>Fruit:</strong> Strawberry 🍓</p>
+            <p><strong>Season:</strong> Summer 🌞</p>
+            <p><strong>Bands:</strong> BLACKPINK (Jennie), KATSEYE (Megan)</p>
+            <p><strong>Songs:</strong> Like Jennie, Touch</p>
+        </div>
+
+        <!-- Trip Section -->
+        <div class="section highlight">
+            <h2>🌍 My Favourite Trip</h2>
+            <p>My favorite trip was to Rajasthan. We went on a jungle safari, visited a beautiful temple, and I had a smooth elephant ride! 🐘</p>
+        </div>
+
+        <!-- Family -->
+        <div class="section">
+            <h2>👨‍👩‍👧‍👧 My Family</h2>
+            <p>I have a little sister named Ayra. She is a great dancer, smart, and very creative!</p>
+        </div>
+
+        <!-- Dream -->
+        <div class="section highlight">
+            <h2>🎯 My Dream</h2>
+            <p>I want to become a doctor (pediatrician) when I grow up.</p>
+        </div>
+
+        <!-- Birthday & Festival -->
+        <div class="section">
+            <h2>🎉 Fun Facts</h2>
+            <p>My favourite festival is Holi!</p>
+            <p>My birthday is on <strong>11th September 2016</strong>.</p>
+        </div>
+
+        <!-- Comment Section -->
+        <div class="comment-section">
+            <h2>Leave a Comment ✨</h2>
+            <input type="text" id="commentInput" placeholder="Write something..." />
+            <button id="postBtn">Post</button>
+
+            <h3>Comments:</h3>
+            <div id="commentsList"></div>
+        </div>
+
     </div>
-  </div>
 
+    <!-- Firebase Script -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, onSnapshot, query, orderBy }
+        from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
 
-  <!-- Firebase and comment script -->
-  <script type="module">
-    // Import Firebase
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-    import { 
-      getFirestore, collection, addDoc, onSnapshot, query, orderBy 
-    } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyAXiWeS0W7JMPZCU5w6mc_NVbvX7Qyn6ck",
+            authDomain: "aadya-profile-comments.firebaseapp.com",
+            projectId: "aadya-profile-comments",
+            storageBucket: "aadya-profile-comments.appspot.com",
+            messagingSenderId: "176771895161",
+            appId: "1:176771895161:web:dd2912e0680e9144b7e9a8"
+        };
 
-    // Your Firebase configuration
-    const firebaseConfig = {
-      apiKey: "AIzaSyAXiWeS0W7JMPZCU5w6mc_NVbvX7Qyn6ck",
-      authDomain: "aadya-profile-comments.firebaseapp.com",
-      projectId: "aadya-profile-comments",
-      storageBucket: "aadya-profile-comments.appspot.com",
-      messagingSenderId: "176771895161",
-      appId: "1:176771895161:web:dd2912e0680e9144b7e9a8",
-      measurementId: "G-M8TKZFDWFG"
-    };
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
 
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
+        const commentsRef = collection(db, "comments");
+        const q = query(commentsRef, orderBy("time", "desc"));
 
-    // --- Send comment ---
-    const commentForm = document.getElementById("commentForm");
-    const commentInput = document.getElementById("commentInput");
+        // Live comment updates
+        onSnapshot(q, (snapshot) => {
+            const commentsList = document.getElementById("commentsList");
+            commentsList.innerHTML = "";
+            snapshot.forEach(doc => {
+                const data = doc.data();
+                const div = document.createElement("div");
+                div.textContent = "🌟 " + data.text;
+                commentsList.appendChild(div);
+            });
+        });
 
-    commentForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
+        // Add comment
+        document.getElementById("postBtn").addEventListener("click", async () => {
+            const input = document.getElementById("commentInput");
+            if (input.value.trim() === "") return;
 
-      const text = commentInput.value.trim();
-      if (!text) return;
+            await addDoc(commentsRef, {
+                text: input.value,
+                time: Date.now()
+            });
 
-      await addDoc(collection(db, "comments"), {
-        text: text,
-        timestamp: Date.now()
-      });
-
-      commentInput.value = "";
-    });
-
-    // --- Display comments live ---
-    const commentsBox = document.getElementById("commentsBox");
-
-    const q = query(collection(db, "comments"), orderBy("timestamp", "desc"));
-
-    onSnapshot(q, (snapshot) => {
-      commentsBox.innerHTML = "";
-
-      snapshot.forEach((doc) => {
-        const data = doc.data();
-        const div = document.createElement("div");
-        div.className = "single-comment";
-        div.innerText = data.text;
-        commentsBox.appendChild(div);
-      });
-    });
-  </script>
+            input.value = "";
+        });
+    </script>
 
 </body>
 </html>
