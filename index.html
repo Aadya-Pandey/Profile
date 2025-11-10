@@ -1,201 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aadya’s Awesome Profile ✨</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom right, #ffe9f3, #c8e7ff);
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            margin: 30px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-        img.profile-pic {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #ff85c0;
-        }
-        img.logo {
-            width: 90px;
-            margin-top: 10px;
-        }
-        h1 {
-            color: #ff4b8e;
-            font-size: 32px;
-            margin-bottom: 5px;
-        }
-        h2 {
-            color: #4b4b4b;
-            margin-top: 15px;
-        }
-        .section {
-            text-align: left;
-            margin: 20px 0;
-        }
-        .highlight {
-            background: #ffe5f7;
-            padding: 10px;
-            border-radius: 12px;
-        }
-        .youtube {
-            background: #fff3cd;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 15px;
-        }
-        .comment-section {
-            background: #e6f4ff;
-            padding: 20px;
-            border-radius: 15px;
-            margin-top: 20px;
-        }
-        input, button {
-            padding: 10px;
-            border-radius: 8px;
-            margin-top: 10px;
-            border: 1px solid #999;
-        }
-        button {
-            background: #ff4b8e;
-            color: white;
-            cursor: pointer;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aadya Pandey | My Creative Profile 💜</title>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+  * { box-sizing: border-box; font-family: "Poppins", sans-serif; }
+
+  body {
+    background: linear-gradient(135deg, #f3e8ff, #e0c3fc, #f9d1ff);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    margin: 0;
+    padding: 0;
+    color: #3a2d63;
+    overflow-x: hidden;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.9);
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(120, 70, 255, 0.2);
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Sparkles */
+  .sparkle {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: sparkle 5s linear infinite;
+  }
+  @keyframes sparkle {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+  }
+
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 5px solid #b48ef7;
+    box-shadow: 0 0 20px rgba(180,142,247,0.4);
+    object-fit: cover;
+  }
+
+  .intro h1 {
+    color: #8b5cf6;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .intro p {
+    margin: 6px 0;
+    font-size: 16px;
+  }
+
+  .youtube-highlight {
+    background: linear-gradient(90deg, #a26ef7, #d76cf7);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 16px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(171,90,255,0.4);
+    animation: pulse 2s infinite;
+  }
+  .youtube-highlight a {
+    color: white;
+    text-decoration: none;
+  }
+  @keyframes pulse {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  .section {
+    margin-top: 30px;
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(120, 70, 255, 0.08);
+    animation: fadeIn 1s ease both;
+  }
+
+  .section h3 {
+    color: #8b5cf6;
+    margin-bottom: 8px;
+  }
+
+  .grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .comment-box {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f4e9ff;
+    border-radius: 16px;
+  }
+  .comment-box h3 { color: #8b5cf6; }
+  textarea {
+    width: 100%;
+    min-height: 80px;
+    border: 2px solid #c9a9ff;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 14px;
+    resize: none;
+  }
+  .add-btn {
+    background: #8b5cf6;
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 10px;
+    margin-top: 8px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  .comment {
+    background: white;
+    border-radius: 10px;
+    padding: 8px;
+    margin-top: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.10);
+  }
+</style>
 </head>
-
 <body>
-    <div class="container">
 
-        <!-- Profile Image -->
-        <img src="aadya-profile.jpg" class="profile-pic" alt="Aadya Profile Picture">
+<div class="container">
 
-        <!-- Logo -->
-        <img src="logo.png" class="logo" alt="Logo">
+  <!-- Sparkles -->
+  <div class="sparkle" style="top:-10px; left:10%; width:6px; height:6px; animation-delay:1s;"></div>
+  <div class="sparkle" style="top:-10px; left:50%; width:8px; height:8px; animation-delay:2s;"></div>
+  <div class="sparkle" style="top:-10px; left:80%; width:5px; height:5px; animation-delay:3s;"></div>
 
-        <h1>Hello! I am Aadya 👋</h1>
-
-        <!-- YouTube Section at Top -->
-        <div class="youtube">
-            <h2>🎥 My YouTube Channel</h2>
-            <p><strong>Dancingdoll #Aadu</strong></p>
-            <a href="https://www.youtube.com/channel/UCnNuVUPdmeatRnlR-Zwbl4g" target="_blank">Click to visit my channel</a>
-        </div>
-
-        <!-- About Section -->
-        <div class="section highlight">
-            <h2>💡 About Me</h2>
-            <p>I study at Billabong High International School.</p>
-            <p>I was born in Indore and I live in Pune.</p>
-            <p>I love sketching, traveling in planes and cars with my family.</p>
-            <p>I get inspired by Dr. APJ Abdul Kalam.</p>
-        </div>
-
-        <!-- Favorites -->
-        <div class="section">
-            <h2>⭐ My Favorites</h2>
-            <p><strong>Books:</strong> Harry Potter and the Order of the Phoenix, The Little Prince</p>
-            <p><strong>Subject:</strong> Maths (helps in calculations & memory)</p>
-            <p><strong>Fruit:</strong> Strawberry 🍓</p>
-            <p><strong>Season:</strong> Summer 🌞</p>
-            <p><strong>Bands:</strong> BLACKPINK (Jennie), KATSEYE (Megan)</p>
-            <p><strong>Songs:</strong> Like Jennie, Touch</p>
-        </div>
-
-        <!-- Trip Section -->
-        <div class="section highlight">
-            <h2>🌍 My Favourite Trip</h2>
-            <p>My favorite trip was to Rajasthan. We went on a jungle safari, visited a beautiful temple, and I had a smooth elephant ride! 🐘</p>
-        </div>
-
-        <!-- Family -->
-        <div class="section">
-            <h2>👨‍👩‍👧‍👧 My Family</h2>
-            <p>I have a little sister named Ayra. She is a great dancer, smart, and very creative!</p>
-        </div>
-
-        <!-- Dream -->
-        <div class="section highlight">
-            <h2>🎯 My Dream</h2>
-            <p>I want to become a doctor (pediatrician) when I grow up.</p>
-        </div>
-
-        <!-- Birthday & Festival -->
-        <div class="section">
-            <h2>🎉 Fun Facts</h2>
-            <p>My favourite festival is Holi!</p>
-            <p>My birthday is on <strong>11th September 2016</strong>.</p>
-        </div>
-
-        <!-- Comment Section -->
-        <div class="comment-section">
-            <h2>Leave a Comment ✨</h2>
-            <input type="text" id="commentInput" placeholder="Write something..." />
-            <button id="postBtn">Post</button>
-
-            <h3>Comments:</h3>
-            <div id="commentsList"></div>
-        </div>
-
+  <div class="profile-header">
+    <div>
+      <img id="avatar" class="profile-pic" src="aadya-profile.jpg" alt="Aadya Avatar">
     </div>
 
-    <!-- Firebase Script -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
-        import { getFirestore, collection, addDoc, onSnapshot, query, orderBy }
-        from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+    <div class="intro">
+      <h1>💜 Aadya Pandey</h1>
+      <p>Age 9 | Student at Billabong High International School 📘</p>
+      <p>Born in Indore, living in Pune ✈️</p>
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyAXiWeS0W7JMPZCU5w6mc_NVbvX7Qyn6ck",
-            authDomain: "aadya-profile-comments.firebaseapp.com",
-            projectId: "aadya-profile-comments",
-            storageBucket: "aadya-profile-comments.appspot.com",
-            messagingSenderId: "176771895161",
-            appId: "1:176771895161:web:dd2912e0680e9144b7e9a8"
-        };
+      <div class="youtube-highlight">
+        🎥 <a href="https://www.youtube.com/channel/UCnNuVUPdmeatRnlR-Zwbl4g" target="_blank">
+          Visit my YouTube Channel — Dancingdoll #Aadu 💃
+        </a>
+      </div>
+    </div>
+  </div>
 
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
+  <div class="section grid">
+    <div>
+      <h3>🌟 My Goals</h3>
+      <p>I want to become a <b>paediatrician</b> 👩‍⚕️ and help children stay healthy!</p>
+    </div>
+    <div>
+      <h3>🚀 My Inspiration</h3>
+      <p><b>Dr. APJ Abdul Kalam</b> — for his knowledge and kindness 🌠</p>
+    </div>
+    <div>
+      <h3>📚 My Favourite Books</h3>
+      <p>Harry Potter & The Little Prince 💫</p>
+    </div>
+  </div>
 
-        const commentsRef = collection(db, "comments");
-        const q = query(commentsRef, orderBy("time", "desc"));
+  <div class="section grid">
+    <div>
+      <h3>🎨 My Hobbies</h3>
+      <p>Dancing | Reading | Sketching | Basketball</p>
+    </div>
+    <div>
+      <h3>🎂 My Birthday</h3>
+      <p>11th September 2016 🎉🍰</p>
+    </div>
+    <div>
+      <h3>🌈 My Favourite Festival</h3>
+      <p>Holi — playing colours with friends! 💦🌸</p>
+    </div>
+  </div>
 
-        // Live comment updates
-        onSnapshot(q, (snapshot) => {
-            const commentsList = document.getElementById("commentsList");
-            commentsList.innerHTML = "";
-            snapshot.forEach(doc => {
-                const data = doc.data();
-                const div = document.createElement("div");
-                div.textContent = "🌟 " + data.text;
-                commentsList.appendChild(div);
-            });
-        });
+  <div class="section grid">
+    <div>
+      <h3>🌍 My Favourite Trip</h3>
+      <p>Rajasthan — jungle safari, temple visit & elephant ride 🐘⛺</p>
+    </div>
+    <div>
+      <h3>👧 My Sister</h3>
+      <p>Ayra — smart, creative & a great dancer 💃🌸</p>
+    </div>
+    <div>
+      <h3>🚗 Family Adventures</h3>
+      <p>I love traveling in planes and cars with my family ✈️🚗💜</p>
+    </div>
+  </div>
 
-        // Add comment
-        document.getElementById("postBtn").addEventListener("click", async () => {
-            const input = document.getElementById("commentInput");
-            if (input.value.trim() === "") return;
+  <!-- Comments Section -->
+  <div class="comment-box">
+    <h3>💬 Leave a Comment for Aadya</h3>
+    <textarea id="commentInput" placeholder="Write your message..."></textarea><br>
+    <button class="add-btn" id="postComment">Post</button>
+    <h3>Comments</h3>
+    <div id="commentList"></div>
+  </div>
 
-            await addDoc(commentsRef, {
-                text: input.value,
-                time: Date.now()
-            });
+  <footer>✨ Made with love by <b>Aadya Pandey</b> 💜</footer>
+</div>
 
-            input.value = "";
-        });
-    </script>
+<!-- Firebase -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, onSnapshot, serverTimestamp } 
+    from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAXiWeS0W7JMPZCU5w6mc_NVbvX7Qyn6ck",
+    authDomain: "aadya-profile-comments.firebaseapp.com",
+    projectId: "aadya-profile-comments",
+    storageBucket: "aadya-profile-comments.firebasestorage.app",
+    messagingSenderId: "176771895161",
+    appId: "1:176771895161:web:dd2912e0680e9144b7e9a8"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const commentInput = document.getElementById("commentInput");
+  const postBtn = document.getElementById("postComment");
+  const commentList = document.getElementById("commentList");
+
+  // Post comment
+  postBtn.onclick = async () => {
+    let text = commentInput.value.trim();
+    if (text.length === 0) return alert("Please write something 💜");
+    await addDoc(collection(db, "comments"), {
+      text: text,
+      time: serverTimestamp()
+    });
+    commentInput.value = "";
+  };
+
+  // Real-time listener
+  onSnapshot(collection(db, "comments"), snap => {
+    commentList.innerHTML = "";
+    snap.forEach(doc => {
+      let div = document.createElement("div");
+      div.className = "comment";
+      div.textContent = doc.data().text;
+      commentList.appendChild(div);
+    });
+  });
+</script>
 
 </body>
 </html>
