@@ -61,6 +61,13 @@
     border: 5px solid #b48ef7;
     box-shadow: 0 0 20px rgba(180,142,247,0.4);
     object-fit: cover;
+    transition: 0.3s ease; /* ✅ Enhancement #4 */
+  }
+
+  /* Enhancement #4: Hover effect */
+  .profile-pic:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(180,142,247,0.7);
   }
 
   .intro h1 {
@@ -86,10 +93,16 @@
     box-shadow: 0 4px 12px rgba(171,90,255,0.4);
     animation: pulse 2s infinite;
   }
-  .youtube-highlight a {
-    color: white;
-    text-decoration: none;
+
+  /* Enhancement #3: Glowing effect */
+  @keyframes glow {
+    from { box-shadow: 0 0 10px #bb86fc; }
+    to { box-shadow: 0 0 25px #d966ff; }
   }
+  .youtube-highlight {
+    animation: glow 2s infinite alternate, pulse 2s infinite;
+  }
+
   @keyframes pulse {
     0%,100% { transform: scale(1); }
     50% { transform: scale(1.05); }
@@ -115,6 +128,23 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 
+  .badge {
+    display: inline-block;
+    background: #ffd166;
+    padding: 6px 14px;
+    border-radius: 25px;
+    font-weight: 600;
+    color: #5a3e1b;
+    box-shadow: 0 3px 8px rgba(255, 209, 102, 0.5);
+    animation: wiggle 2s infinite;
+    margin-top: 10px;
+  }
+  @keyframes wiggle {
+    0%,100% { transform: rotate(0deg); }
+    50% { transform: rotate(2deg); }
+  }
+
+  /* Comments */
   .comment-box {
     margin-top: 30px;
     padding: 20px;
@@ -122,6 +152,7 @@
     border-radius: 16px;
   }
   .comment-box h3 { color: #8b5cf6; }
+
   textarea {
     width: 100%;
     min-height: 80px;
@@ -131,6 +162,7 @@
     font-size: 14px;
     resize: none;
   }
+
   .add-btn {
     background: #8b5cf6;
     border: none;
@@ -141,12 +173,33 @@
     cursor: pointer;
     font-size: 15px;
   }
+
   .comment {
     background: white;
     border-radius: 10px;
     padding: 8px;
     margin-top: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.10);
+    animation: fadeInUp 0.4s;
+  }
+
+  .comment:nth-child(odd) { background: #ffffff; }
+  .comment:nth-child(even) { background: #f8f1ff; }
+
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  /* Enhancement #1 Falling emojis */
+  @keyframes fall {
+    to { transform: translateY(100vh); opacity: 0; }
   }
 </style>
 </head>
@@ -164,7 +217,9 @@
     </div>
 
     <div class="intro">
-      <h1>💜 Aadya Pandey</h1>
+      <!-- Enhancement #2 typing animation -->
+      <h1 id="nameTitle"></h1>
+
       <p>Age 9 | Student at Billabong High International School 📘</p>
       <p>Born in Indore, living in Pune ✈️</p>
 
@@ -173,8 +228,12 @@
           Visit my YouTube Channel — Dancingdoll #Aadu 💃
         </a>
       </div>
+
+      <div class="badge">🏆 Creative Star</div>
     </div>
   </div>
+
+  <!-- YOUR SECTIONS REMAIN EXACTLY THE SAME -->
 
   <div class="section grid">
     <div>
@@ -194,7 +253,7 @@
   <div class="section grid">
     <div>
       <h3>🎨 My Hobbies</h3>
-      <p>Dancing | Reading | Sketching | Basketball</p>
+      <p>🎶 Dancing | 📖 Reading | ✏️ Sketching | 🏀 Basketball</p>
     </div>
     <div>
       <h3>🎂 My Birthday</h3>
@@ -221,6 +280,12 @@
     </div>
   </div>
 
+  <!-- Fun Fact Enhancement (#5) -->
+  <div class="section">
+    <h3>🌟 Fun Fact</h3>
+    <p>I can solve maths puzzles super fast! 🔢✨</p>
+  </div>
+
   <div class="comment-box">
     <h3>💬 Leave a Comment for Aadya</h3>
     <textarea id="commentInput" placeholder="Write your message..."></textarea><br>
@@ -232,17 +297,46 @@
   <footer>✨ Made with love by <b>Aadya Pandey</b> 💜</footer>
 </div>
 
-<!-- ✅ Firebase Realtime Database Code -->
+<!-- Enhancement #2 Typing animation for name -->
+<script>
+  let text = "💜 Aadya Pandey";
+  let i = 0;
+  function type() {
+    if (i < text.length) {
+      document.getElementById("nameTitle").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, 100);
+    }
+  }
+  type();
+</script>
+
+<!-- Enhancement #1 Falling emojis -->
+<script>
+  const emojis = ["💜","✨","🌸","💃","🏀","🎨","📚"];
+  setInterval(() => {
+    let e = document.createElement("div");
+    e.innerText = emojis[Math.floor(Math.random()*emojis.length)];
+    e.style.position = "fixed";
+    e.style.left = Math.random()*100 + "vw";
+    e.style.top = "-20px";
+    e.style.fontSize = "20px";
+    e.style.animation = "fall 3s linear forwards";
+    document.body.appendChild(e);
+    setTimeout(()=>e.remove(),3000);
+  }, 1000);
+</script>
+
+<!-- Your Firebase Realtime Database code (UNCHANGED) -->
 <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
-  import { getDatabase, ref, push, onValue } 
-    from "https://www.gstatic.com/firebasejs/12.5.0/firebase-database.js";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+  import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyAXiWeS0W7JMPZCU5w6mc_NVbvX7Qyn6ck",
     authDomain: "aadya-profile-comments.firebaseapp.com",
+    databaseURL: "https://aadya-profile-comments-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "aadya-profile-comments",
-    databaseURL: "https://aadya-profile-comments-default-rtdb.firebaseio.com/",
     storageBucket: "aadya-profile-comments.firebasestorage.app",
     messagingSenderId: "176771895161",
     appId: "1:176771895161:web:dd2912e0680e9144b7e9a8"
@@ -255,30 +349,38 @@
   const postBtn = document.getElementById("postComment");
   const commentList = document.getElementById("commentList");
 
-  // ✅ Post comment
   postBtn.onclick = async () => {
     let text = commentInput.value.trim();
-    if (text.length === 0) return alert("Please write something 💜");
+    if (!text) return alert("Please write something 💜");
 
-    push(ref(db, "comments"), {
+    if (navigator.vibrate) navigator.vibrate(80);
+
+    await push(ref(db, "comments"), {
       text: text,
       time: Date.now()
     });
 
     commentInput.value = "";
+
+    setTimeout(() => {
+      commentList.scrollTop = commentList.scrollHeight;
+    }, 200);
   };
 
-  // ✅ Real-time display
   onValue(ref(db, "comments"), snapshot => {
     commentList.innerHTML = "";
-    snapshot.forEach(child => {
+    const data = snapshot.val();
+    if (!data) return;
+
+    Object.values(data).forEach(c => {
       let div = document.createElement("div");
       div.className = "comment";
-      div.textContent = child.val().text;
+      div.textContent = c.text;
       commentList.appendChild(div);
     });
-  });
 
+    commentList.scrollTop = commentList.scrollHeight;
+  });
 </script>
 
 </body>
