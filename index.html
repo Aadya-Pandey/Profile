@@ -67,12 +67,6 @@
     object-fit: cover;
   }
 
-  input[type="file"] {
-    font-size: 13px;
-    color: #6a5b9a;
-    margin-top: 8px;
-  }
-
   .intro {
     flex: 1;
   }
@@ -190,9 +184,8 @@
 
   <div class="profile-header">
     <div>
-      <img id="avatar" class="profile-pic" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600" alt="Aadya Avatar">
-      <br>
-      <input type="file" id="imageUpload" accept="image/*">
+      <!-- Your fixed profile image -->
+      <img id="avatar" class="profile-pic" src="aadya-profile.jpg" alt="Aadya Avatar">
     </div>
     <div class="intro">
       <h1>💜 Aadya Pandey</h1>
@@ -290,18 +283,7 @@
       alert('Please add a nice comment for Aadya! 💜');
     }
   });
-
-  // Upload photo
-  document.getElementById('imageUpload').addEventListener('change', e => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = ev => document.getElementById('avatar').src = ev.target.result;
-      reader.readAsDataURL(file);
-    }
-  });
 </script>
 
 </body>
 </html>
-
